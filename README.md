@@ -1,10 +1,8 @@
-# Mint Web Template
+# Paper Hands Society DAO
 
-A simple base website for minting NFTs. 
+A simple base website for minting NFTs.
 
 ## Usage
-
-To use this template, select it when creating a new repository.
 
 ```
 yarn
@@ -26,14 +24,6 @@ Update the background image `public/img/background.png`.
 The content is spread through various files.
 
 Update the content in `src/config/content.tsx`.
-
-#### Metadata
-
-Update the `name` in `package.json`.
-
-Update the metadata in `public/index.html`.
-
-Update the manifest `public/manifest.json`.
 
 
 #### Header / Footer
@@ -71,8 +61,6 @@ If you are using a light theme, update `TOAST_THEME` to `light`.
 **Note**: If you are renaming the colours you will have to rename the references too.
 
 ### Deployment
-
-Update the URL in `package.json` under `predeploy`.
 
 Make sure all your work is committed.
 
