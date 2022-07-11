@@ -10,7 +10,7 @@ import {
 	TX_PENDING,
 } from '../../config/content'
 import Input from '../Input/Input'
-import { BigNumber, ethers } from 'ethers'
+import { BigNumber } from 'ethers'
 import Spinner from '../Spinner/Spinner'
 
 const Minting: FC = () => {
@@ -18,24 +18,33 @@ const Minting: FC = () => {
 	const { nftContract } = useContext(ContractContext)
 	const classes = useStyles()
 	const [loading, setLoading] = useState(true)
-	const [allowance, setAllowance] = useState<BigNumber | null>(null)
+	const [contractState, setContractState] = useState(0)
+	const [allowance, setAllowance] = useState(0)
 	const [txPending, setTxPending] = useState(false)
 	const [message, setMessage] = useState('')
 
 	useEffect(() => {
-		const checkAllowance = async () => {
+		const checkStatus = async () => {
 			if (!web3Provider || !nftContract) {
 				return
 			}
 			const signer = web3Provider.getSigner()
-			const _allowance = await nftContract.allowance(await signer.getAddress())
-			setAllowance(_allowance)
-			if (_allowance === ethers.constants.Zero) {
-				setMessage('All tokens claimed!')
+			const _contractState = await nftContract.contractState()
+			setContractState(_contractState)
+			if (_contractState === 0) {
+				// Sale off
+				setAllowance(0)
+			} else {
+				const _allowance = await nftContract.allowance(await signer.getAddress())
+				setAllowance(_allowance)
+				if (_allowance === 0) {
+					// All claimed
+					setMessage('You have claimed your allowance!')
+				}
 			}
 			setLoading(false)
 		}
-		checkAllowance()
+		checkStatus()
 	}, [web3Provider, nftContract])
 
 	const doMint = async () => {
@@ -57,20 +66,26 @@ const Minting: FC = () => {
 			<h1>{MINT_PAGE_TITLE}</h1>
 			{loading ? (
 				<Spinner />
-			) : (
+			) : (contractState === 0 ? (
 				<>
+					<p>Sale not yet live!</p>
+					<p>Come back soon!</p>
+				</>
+			) : (
+				<div className={classes.mint}>
 					<Input
 						id="qty"
 						type="number"
-						defaultValue={allowance?.toNumber() || 3}
-						max={allowance?.toNumber()}
+						defaultValue={allowance}
+						min={1}
+						max={allowance}
 						required
 					/>
 					<Button onClick={doMint} disabled={txPending}>
 						{txPending ? TX_PENDING : MINT_BTN_TEXT}
 					</Button>
-				</>
-			)}
+				</div>
+			))}
 			<p>{message}</p>
 		</div>
 	)
