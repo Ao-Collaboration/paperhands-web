@@ -4,14 +4,21 @@ import { Web3Context } from '../../context/Web3/Web3Context'
 import useStyles from './Minting.styles'
 import { ContractContext } from '../../context/Web3/ContractContext'
 import {
+	MINT_ALLOWANCE_EXCEEDED,
 	MINT_BTN_TEXT,
+	MINT_FAIL_GENERIC,
+	MINT_FAIL_POOR,
+	MINT_NOT_ALLOWLISTED,
 	MINT_PAGE_TITLE,
 	MINT_SUCCESS,
 	TX_PENDING,
 } from '../../config/content'
 import Input from '../Input/Input'
-import { BigNumber } from 'ethers'
+import { BigNumber, ContractTransaction } from 'ethers'
 import Spinner from '../Spinner/Spinner'
+import { ALLOWLIST } from '../../config/allowlist'
+import { generateTree, getLeaf, getProof } from '../../utils/merkle'
+import { toast } from 'react-toastify'
 
 const Minting: FC = () => {
 	const { web3Provider } = useContext(Web3Context)
@@ -21,7 +28,6 @@ const Minting: FC = () => {
 	const [contractState, setContractState] = useState(0)
 	const [allowance, setAllowance] = useState(0)
 	const [txPending, setTxPending] = useState(false)
-	const [message, setMessage] = useState('')
 
 	useEffect(() => {
 		const checkStatus = async () => {
@@ -35,11 +41,18 @@ const Minting: FC = () => {
 				// Sale off
 				setAllowance(0)
 			} else {
-				const _allowance = await nftContract.allowance(await signer.getAddress())
-				setAllowance(_allowance)
-				if (_allowance === 0) {
-					// All claimed
-					setMessage('You have claimed your allowance!')
+				const addr = await signer.getAddress()
+				if (_contractState === 1 && !ALLOWLIST.includes(addr)) {
+					// Presale, not on list
+					setAllowance(0)
+					toast.warn(MINT_NOT_ALLOWLISTED)
+				} else {
+					const _allowance = await nftContract.allowance(addr)
+					setAllowance(_allowance)
+					if (_allowance === 0) {
+						// All claimed
+						toast.warn(MINT_ALLOWANCE_EXCEEDED)
+					}
 				}
 			}
 			setLoading(false)
@@ -52,13 +65,36 @@ const Minting: FC = () => {
 		if (!web3Provider || !nftContract || !qty) {
 			return
 		}
-		const tx = await nftContract.mintPublic(qty, {
-			value: BigNumber.from(await nftContract.tokenPrice()).mul(qty),
-		})
-		setTxPending(true)
-		await tx.wait()
-		setTxPending(false)
-		setMessage(MINT_SUCCESS)
+		const signer = web3Provider.getSigner()
+		const addr = await signer.getAddress()
+		try {
+			let tx: ContractTransaction
+			if (contractState === 1) {
+				// Presale
+				const { merkleTree } = generateTree(ALLOWLIST)
+				const leaf = getLeaf(addr)
+				const proof = getProof(merkleTree, leaf)
+				tx = await nftContract.mintPresale(qty, proof, {
+					value: BigNumber.from(await nftContract.tokenPrice()).mul(qty),
+				})
+			} else {
+				// Public
+				tx = await nftContract.mintPublic(qty, {
+					value: BigNumber.from(await nftContract.tokenPrice()).mul(qty),
+				})
+			}
+			setTxPending(true)
+			await tx.wait()
+			setTxPending(false)
+			toast.success(MINT_SUCCESS)
+		} catch (err: any) { // eslint-disable-line @typescript-eslint/no-explicit-any
+			if (err?.error?.code === -32000) {
+				toast.error(MINT_FAIL_POOR)
+			} else {
+				toast.error(MINT_FAIL_GENERIC)
+			}
+			console.error(err.error)
+		}
 	}
 
 	return (
@@ -86,7 +122,6 @@ const Minting: FC = () => {
 					</Button>
 				</div>
 			))}
-			<p>{message}</p>
 		</div>
 	)
 }
