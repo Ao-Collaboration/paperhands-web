@@ -1,6 +1,7 @@
 import { MerkleTree } from 'merkletreejs'
 import { utils } from 'ethers'
 import keccak256 from 'keccak256'
+import { ALLOWLIST } from '../config/allowlist'
 
 export interface MerkleDetails {
 	merkleTree: MerkleTree
@@ -27,3 +28,6 @@ export const getLeaf = (addr: string): Buffer =>
 	keccak256(utils.solidityPack(['uint256'], [addr]))
 
 export const getProof = (tree: MerkleTree, leaf: Buffer): string[] => tree.getHexProof(leaf)
+
+const { root } = generateTree(ALLOWLIST)
+console.error(`Merkle root: ${root}`)
