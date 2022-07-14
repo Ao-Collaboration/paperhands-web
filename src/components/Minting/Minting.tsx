@@ -12,6 +12,7 @@ import {
 	MINT_PAGE_TITLE,
 	MINT_SUCCESS,
 	TX_PENDING,
+	WEBSITE_OUTDATED,
 } from '../../config/content'
 import Input from '../Input/Input'
 import { BigNumber, ContractTransaction } from 'ethers'
@@ -42,11 +43,23 @@ const Minting: FC = () => {
 				setAllowance(0)
 			} else {
 				const addr = await signer.getAddress()
-				if (_contractState === 1 && !ALLOWLIST.includes(addr)) {
-					// Presale, not on list
-					setAllowance(0)
-					toast.warn(MINT_NOT_ALLOWLISTED)
-				} else {
+				const listed = ALLOWLIST.includes(addr.toLowerCase())
+				let checkAllowance = true
+				if (_contractState === 1) {
+					// Presale
+					if (!listed) {
+						// Presale, not on list
+						checkAllowance = false
+						setAllowance(0)
+						toast.warn(MINT_NOT_ALLOWLISTED)
+					} else if (generateTree(ALLOWLIST).root !== await nftContract.merkleRoot()) {
+						checkAllowance = false
+						setAllowance(0)
+						toast.warn(WEBSITE_OUTDATED)
+					}
+				}
+				if (checkAllowance) {
+					// Check how many tokens are claimable
 					const _allowance = await nftContract.allowance(addr)
 					setAllowance(_allowance)
 					if (_allowance === 0) {
