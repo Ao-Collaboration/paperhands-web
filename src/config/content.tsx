@@ -13,14 +13,14 @@ export const WEBSITE_OUTDATED =
 export const TX_PENDING = 'Tx Pending...'
 
 // Landing Page
-export const HERO_TITLE = 'Your NFT Project'
+export const HERO_TITLE = 'Paper Hands Society'
 export const HERO_DESCRIPTION =
-	'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse cursus, ex eu fringilla condimentum, justo mauris tincidunt ex, vitae fringilla nibh lorem nec nibh. In tincidunt sed ipsum at commodo.'
+	'Paper Hands Society, or PHS is a collective group of individuals who reject the current NFT status quo. Our belief is simple "Community over everything"; with our motto, we have set forth to build a project that is bigger than us.'
 export const HERO_BUTTON_TEXT = 'Mint Now'
 export const HERO_SUBTEXT =
-	'*Quisque eget libero posuere, cursus justo eget, gravida dui. Duis sit amet commodo nisl. Donec id dapibus elit.'
+	'PHS\'s inception was inspired by TruthLabs and the fantastic work they\'ve achieved.'
 
-export const ABOUT_TITLE = 'About this project'
+export const ABOUT_TITLE = 'About PHS'
 export const ABOUT_DESCRIPTION =
 	'Nullam pharetra ac ante ut molestie. Vestibulum iaculis sagittis felis. Duis luctus metus quis urna imperdiet, eu fringilla lacus pulvinar. Sed viverra ullamcorper metus maximus bibendum. Vivamus ac rutrum eros, non egestas est. Etiam in venenatis odio, eget interdum nibh. Sed mauris justo, venenatis a ipsum sit amet, finibus tempus eros. Vestibulum sed tincidunt arcu, vitae suscipit tortor. Donec fringilla diam eget est dictum lacinia.'
 

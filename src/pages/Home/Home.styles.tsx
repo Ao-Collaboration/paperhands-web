@@ -18,6 +18,9 @@ const styles = {
 		'& p': {
 			maxWidth: '40em',
 		},
+		'& div': {
+			padding: '1em',
+		},
 		padding: '4em 0em',
 	},
 	hero: {

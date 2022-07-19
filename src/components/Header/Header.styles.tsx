@@ -1,12 +1,12 @@
 import { createUseStyles } from 'react-jss'
-import { black, teal } from '../../config/colours'
+import { white } from '../../config/colours'
 import { weightSemiBold } from '../../config/jss-vars'
 
 const styles = {
 	header: {
 		display: 'flex',
 		flexDirection: 'row',
-		justifyContent: 'flex-start',
+		justifyContent: 'center',
 		alignItems: 'center',
 		gap: '1em',
 		padding: '1em',
@@ -18,13 +18,18 @@ const styles = {
 	},
 	link: {
 		textTransform: 'uppercase',
-		color: black,
+		color: white,
 		fontSize: '1.5em',
 		fontWeight: weightSemiBold,
 		textDecoration: 'none',
 		'&:hover': {
-			color: teal,
-		}
+			textDecoration: 'underline',
+		},
+	},
+	nav: {
+		'& a': {
+			margin: '0em 1em',
+		},
 	},
 }
 

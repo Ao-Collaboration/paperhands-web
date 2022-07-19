@@ -40,12 +40,14 @@ const Home: React.FC = () => {
 				</section>
 
 				<section id="about" className={classes.about}>
-					<h2>{ABOUT_TITLE}</h2>
-					<p>{ABOUT_DESCRIPTION}</p>
+					<div>
+						<h2>{ABOUT_TITLE}</h2>
+						<p>{ABOUT_DESCRIPTION}</p>
+					</div>
 				</section>
 
 				<section id="faq" className={classes.faq}>
-					<>
+					<div>
 						<h2>{FAQ_TITLE}</h2>
 						{FAQS.map(faq => {
 							return (
@@ -56,7 +58,7 @@ const Home: React.FC = () => {
 								/>
 							)
 						})}
-					</>
+					</div>
 				</section>
 			</div>
 		</PageWrapper>
