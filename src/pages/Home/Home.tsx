@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom'
 import {
 	ABOUT_DESCRIPTION,
 	ABOUT_TITLE,
+	COUNCIL_DESCRIPTION,
+	COUNCIL_TITLE,
 	FAQS,
 	FAQ_TITLE,
 	HERO_BUTTON_TEXT,
@@ -37,18 +39,35 @@ const Home: React.FC = () => {
 					<p>
 						<sub>{HERO_SUBTEXT}</sub>
 					</p>
+					<img className={classes.barfHand} src="/img/barf-hand.png" />
 				</section>
 
 				<section id="about" className={classes.about}>
-					<div>
-						<h2>{ABOUT_TITLE}</h2>
-						<p>{ABOUT_DESCRIPTION}</p>
+					<div className={classes.aside}>
+						<div>
+							<h2>{ABOUT_TITLE}</h2>
+							<p>{ABOUT_DESCRIPTION}</p>
+						</div>
+						<img className={classes.vineHand} src="/img/hand-with-vine.png" />
+					</div>
+				</section>
+
+				<section id="council" className={classes.council}>
+					<div className={classes.aside}>
+						<img className={classes.longTongue} src="/img/long-tongue.png" />
+						<img className={classes.barcode} src="/img/barcode.png" />
+						<div>
+							<h2>{COUNCIL_TITLE}</h2>
+							<p>{COUNCIL_DESCRIPTION}</p>
+						</div>
 					</div>
 				</section>
 
 				<section id="faq" className={classes.faq}>
+					<img className={classes.pinkHand} src="/img/pink-hand.png" />
+					<img className={classes.grayHand} src="/img/grayish-hand.png" />
 					<div>
-						<h2>{FAQ_TITLE}</h2>
+						<h2 className={classes.centered}>{FAQ_TITLE}</h2>
 						{FAQS.map(faq => {
 							return (
 								<Accordion

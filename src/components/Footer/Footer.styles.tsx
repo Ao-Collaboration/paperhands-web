@@ -1,20 +1,47 @@
 import { createUseStyles } from 'react-jss'
-import { black } from '../../config/colours'
+import { black, green, white } from '../../config/colours'
 
 const styles = {
 	footer: {
-		background: black,
-		marginTop: '2em',
-	},
-	inner: {
-		display: 'grid',
-		gridTemplateColumns: 'repeat(2, 1fr)',
-		justifyContent: 'center',
+		background: green,
+		display: 'flex',
+		flexDirection: 'column',
 		alignItems: 'center',
-		padding: '1em',
+	},
+	title: {
+		color: white,
+		fontSize: '2em',
+		marginBottom: '0.2em',
+	},
+	linkGroup: {
+		display: 'flex',
+		'& a': {
+			padding: '0.5em',
+		},
+	},
+	hand: {
+		width: '100px',
+	},
+	text: {
+		width: '40em',
 	},
 	right: {
+		flexBasis: '50%',
+		textAlign: 'left',
+	},
+	left: {
+		flexBasis: '50%',
 		textAlign: 'right',
+	},
+	copy: {
+		display: 'flex',
+		width: '100%',
+		alignItems: 'baseline',
+		fontSize: '0.8em',
+		color: white,
+		'& a': {
+			color: white,
+		},
 	},
 }
 

@@ -17,7 +17,9 @@ const Accordion: React.FC<Props> = ({ title, expandedText }) => {
 				defaultChecked
 				className={classes.check}
 			/>
-			<h3 aria-hidden>{title}</h3>
+			<h3 className={classes.title} aria-hidden>
+				{title}
+			</h3>
 			<p className={classes.description}>{expandedText}</p>
 		</div>
 	)

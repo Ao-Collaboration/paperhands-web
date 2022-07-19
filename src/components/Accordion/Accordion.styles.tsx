@@ -1,7 +1,10 @@
 import { createUseStyles } from 'react-jss'
+import { black, teal } from '../../config/colours'
 
 const styles = {
-	accordion: {},
+	accordion: {
+		padding: '0em 2em',
+	},
 	check: {
 		position: 'absolute',
 		cursor: 'pointer',
@@ -14,6 +17,20 @@ const styles = {
 			maxHeight: '0',
 			opacity: '0',
 			transform: 'translate(0, 50%)',
+			paddingBottom: '0em',
+		},
+		'&:checked ~ h3': {
+			color: black,
+			'&::after': {
+				content: '"+"',
+			},
+		},
+	},
+	title: {
+		color: teal,
+		'&::after': {
+			content: '"-"',
+			paddingLeft: '0.5em',
 		},
 	},
 	description: {
@@ -25,6 +42,7 @@ const styles = {
 		marginTop: '14px',
 		zIndex: '2',
 		transition: 'all 0.25s ease-in-out',
+		paddingBottom: '2em',
 	},
 }
 
