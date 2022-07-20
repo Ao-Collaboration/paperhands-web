@@ -57,8 +57,11 @@ const Home: React.FC = () => {
 
 				<section id="council" className={classes.council}>
 					<div className={classes.aside}>
-						<img className={classes.longTongue} src="/img/long-tongue.png" />
-						<img className={classes.barcode} src="/img/barcode.png" />
+						<img
+							className={classes.longTongueHand}
+							src="/img/long-tongue.png"
+						/>
+						<img className={classes.barcodeHand} src="/img/barcode.png" />
 						<div>
 							<h2>{COUNCIL_TITLE}</h2>
 							<p>{COUNCIL_DESCRIPTION}</p>

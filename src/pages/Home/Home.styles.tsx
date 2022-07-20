@@ -5,6 +5,7 @@ import {
 	orange,
 	paper_white,
 	teal,
+	text_shadow,
 	white,
 } from '../../config/colours'
 
@@ -68,26 +69,34 @@ const styles = {
 	centered: {
 		textAlign: 'center',
 	},
+	hand: {
+		filter: `drop-shadow(-10px 5px 2px ${text_shadow})`,
+	},
 	barfHand: {
+		composes: '$hand',
 		position: 'absolute',
 		right: '-5em',
 		width: '400px',
 		transform: 'rotate(-40deg)',
 	},
 	vineHand: {
+		composes: '$hand',
 		width: '400px',
 	},
-	longTongue: {
+	longTongueHand: {
+		composes: '$hand',
 		width: '300px',
 		transform: 'rotate(-15deg)',
 	},
-	barcode: {
+	barcodeHand: {
+		composes: '$hand',
 		width: '300px',
 		marginLeft: '-6em',
 		marginTop: '-2em',
 		transform: 'rotate(15deg)',
 	},
 	pinkHand: {
+		composes: '$hand',
 		position: 'absolute',
 		width: '400px',
 		left: '0',
@@ -96,6 +105,7 @@ const styles = {
 		transform: 'rotate(-25deg)',
 	},
 	grayHand: {
+		composes: '$hand',
 		position: 'absolute',
 		width: '400px',
 		right: '0',
