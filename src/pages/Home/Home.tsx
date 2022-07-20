@@ -5,6 +5,8 @@ import { useNavigate } from 'react-router-dom'
 import {
 	ABOUT_DESCRIPTION,
 	ABOUT_TITLE,
+	ACTION_BUTTON_1,
+	ACTION_BUTTON_2,
 	COUNCIL_DESCRIPTION,
 	COUNCIL_TITLE,
 	FAQS,
@@ -16,6 +18,7 @@ import {
 } from '../../config/content'
 import Button from '../../components/Button/Button'
 import Accordion from '../../components/Accordion/Accordion'
+import ActionPanel from '../../components/ActionPanel/ActionPanel'
 
 const Home: React.FC = () => {
 	const navigate = useNavigate()
@@ -79,6 +82,7 @@ const Home: React.FC = () => {
 						})}
 					</div>
 				</section>
+				<ActionPanel />
 			</div>
 		</PageWrapper>
 	)

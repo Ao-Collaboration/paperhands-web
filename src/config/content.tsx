@@ -13,12 +13,18 @@ export const WEBSITE_OUTDATED =
 export const TX_PENDING = 'Tx Pending...'
 
 // social links
-
 export const DISCORD_LINK = 'https://discord.com/'
 export const TWITTER_LINK = 'https://twitter.com/'
 export const OPENSEA_LINK = 'https://opensea.com/'
 export const MJORK_LINK = 'https://example.com/'
 export const MILKYTASTE_LINK = 'https://block.aocollab.tech/'
+
+// ACTION BUTTONS
+
+export const ACTION_BUTTON_1 = 'Join the Discord'
+export const ACTION_LINK_1 = 'https://discord.com/'
+export const ACTION_BUTTON_2 = 'Buy on Opensea'
+export const ACTION_LINK_2 = 'https://opensea.com/'
 
 // Landing Page
 export const HERO_TITLE = 'Paper Hands Society'

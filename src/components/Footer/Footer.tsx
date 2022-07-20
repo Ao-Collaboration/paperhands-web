@@ -18,13 +18,13 @@ const Footer: React.FC = () => {
 		<footer className={classes.footer}>
 			<p className={classes.title}>Paper Hands Society</p>
 			<div className={classes.linkGroup}>
-				<a href={DISCORD_LINK}>
+				<a href={DISCORD_LINK} target="_blank">
 					<DiscordLogo />
 				</a>
-				<a href={TWITTER_LINK}>
+				<a href={TWITTER_LINK} target="_blank">
 					<TwitterLogo />
 				</a>
-				<a href={OPENSEA_LINK}>
+				<a href={OPENSEA_LINK} target="_blank">
 					<OpenseaLogo />
 				</a>
 			</div>
@@ -34,8 +34,14 @@ const Footer: React.FC = () => {
 				</span>
 				<img src="/img/grayish-hand.png" className={classes.hand} />
 				<span className={`${classes.right} ${classes.text}`}>
-					Designed by <a href={MJORK_LINK}>mjork.eth</a> | Developed by{' '}
-					<a href={MILKYTASTE_LINK}>MilkyTaste</a>
+					Designed by{' '}
+					<a href={MJORK_LINK} target="_blank">
+						mjork.eth
+					</a>{' '}
+					| Developed by{' '}
+					<a href={MILKYTASTE_LINK} target="_blank">
+						MilkyTaste
+					</a>
 				</span>
 			</div>
 		</footer>

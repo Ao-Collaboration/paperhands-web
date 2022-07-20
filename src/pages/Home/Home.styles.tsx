@@ -4,6 +4,7 @@ import {
 	dark_purple,
 	orange,
 	paper_white,
+	teal,
 	white,
 } from '../../config/colours'
 
