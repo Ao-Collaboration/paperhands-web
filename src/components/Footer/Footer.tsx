@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom'
 import {
 	DISCORD_LINK,
 	MILKYTASTE_LINK,

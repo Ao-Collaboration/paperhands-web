@@ -1,4 +1,4 @@
-import { faDiscord, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { faDiscord } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { white } from '../../config/colours'
 import useStyles, { ClassNames } from './Logo.styles'

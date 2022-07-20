@@ -1,5 +1,5 @@
 import { createUseStyles } from 'react-jss'
-import { black, green, text_shadow, white } from '../../config/colours'
+import { green, text_shadow, white } from '../../config/colours'
 import { headingFontFamily } from '../../config/jss-vars'
 
 const styles = {
@@ -14,6 +14,7 @@ const styles = {
 		fontSize: '3em',
 		marginBottom: '0.2em',
 		fontFamily: headingFontFamily,
+		textTransform: 'uppercase',
 		textShadow: `3px 3px 5px ${text_shadow}`,
 	},
 	linkGroup: {

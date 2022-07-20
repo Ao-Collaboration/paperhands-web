@@ -2,16 +2,11 @@ import { createUseStyles } from 'react-jss'
 import {
 	black,
 	dark_purple,
-	green,
 	off_black,
 	teal,
 	white,
 } from '../../config/colours'
-import {
-	headingFontFamily,
-	standardFontFamily,
-	weightSemiBold,
-} from '../../config/jss-vars'
+import { headingFontFamily, weightSemiBold } from '../../config/jss-vars'
 
 const styles = {
 	actionPanel: {
