@@ -4,10 +4,11 @@ import {
 	dark_purple,
 	orange,
 	paper_white,
-	teal,
-	text_shadow,
+	image_shadow,
 	white,
+	text_shadow,
 } from '../../config/colours'
+import { headingFontFamily } from '../../config/jss-vars'
 
 const styles = {
 	page: {
@@ -18,6 +19,14 @@ const styles = {
 		width: '100vw',
 		overflowX: 'hidden',
 		position: 'relative',
+		'& h1': {
+			fontFamily: headingFontFamily,
+			textTransform: 'uppercase',
+			fontSize: '3em',
+			textShadow: `3px 3px 5px ${text_shadow}`,
+			margin: '0',
+			marginBottom: '-0.5em',
+		},
 	},
 	section: {
 		width: '100%',
@@ -27,12 +36,23 @@ const styles = {
 		alignItems: 'center',
 		justifyContent: 'center',
 		padding: '4em 0em',
+		'& h2, h3': {
+			fontFamily: headingFontFamily,
+			textTransform: 'uppercase',
+			fontSize: '2em',
+			textShadow: `3px 3px 5px ${text_shadow}`,
+			margin: '0',
+		},
 	},
 	hero: {
 		composes: '$section',
 		textAlign: 'center',
 		'& p': {
 			maxWidth: '50%',
+			fontSize: '1.3em',
+		},
+		'& sub': {
+			fontSize: '0.5em',
 		},
 	},
 	about: {
@@ -53,24 +73,26 @@ const styles = {
 		backgroundColor: dark_purple,
 		'& div': {
 			maxWidth: '60em',
+			padding: '0 2em',
 		},
 	},
 	faq: {
 		composes: '$section',
 		position: 'relative',
 		backgroundColor: orange,
-		'& div': {
-			zIndex: '100',
-			backgroundColor: paper_white,
-			color: black,
-			maxWidth: '60em',
-		},
+	},
+	paper: {
+		zIndex: '100',
+		backgroundColor: paper_white,
+		color: black,
+		maxWidth: '50em',
+		padding: '0 2em',
 	},
 	centered: {
 		textAlign: 'center',
 	},
 	hand: {
-		filter: `drop-shadow(-10px 5px 2px ${text_shadow})`,
+		filter: `drop-shadow(-10px 5px 2px ${image_shadow})`,
 	},
 	barfHand: {
 		composes: '$hand',

@@ -7,7 +7,11 @@ import {
 	teal,
 	white,
 } from '../../config/colours'
-import { standardFontFamily, weightSemiBold } from '../../config/jss-vars'
+import {
+	headingFontFamily,
+	standardFontFamily,
+	weightSemiBold,
+} from '../../config/jss-vars'
 
 const styles = {
 	actionPanel: {
@@ -32,9 +36,9 @@ const styles = {
 	},
 	button: {
 		cursor: 'pointer',
-		fontFamily: standardFontFamily,
+		fontFamily: headingFontFamily,
 		fontWeight: weightSemiBold,
-		fontSize: '1rem',
+		fontSize: '2rem',
 		lineHeight: '2rem',
 		textAlign: 'center',
 		outline: 'none',

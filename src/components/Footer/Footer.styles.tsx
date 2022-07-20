@@ -1,5 +1,6 @@
 import { createUseStyles } from 'react-jss'
-import { black, green, white } from '../../config/colours'
+import { black, green, text_shadow, white } from '../../config/colours'
+import { headingFontFamily } from '../../config/jss-vars'
 
 const styles = {
 	footer: {
@@ -10,8 +11,10 @@ const styles = {
 	},
 	title: {
 		color: white,
-		fontSize: '2em',
+		fontSize: '3em',
 		marginBottom: '0.2em',
+		fontFamily: headingFontFamily,
+		textShadow: `3px 3px 5px ${text_shadow}`,
 	},
 	linkGroup: {
 		display: 'flex',

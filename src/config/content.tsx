@@ -36,11 +36,13 @@ export const HERO_SUBTEXT =
 
 export const ABOUT_TITLE = 'About PHS'
 export const ABOUT_DESCRIPTION =
-	'Nullam pharetra ac ante ut molestie. Vestibulum iaculis sagittis felis. Duis luctus metus quis urna imperdiet, eu fringilla lacus pulvinar. Sed viverra ullamcorper metus maximus bibendum. Vivamus ac rutrum eros, non egestas est. Etiam in venenatis odio, eget interdum nibh. Sed mauris justo, venenatis a ipsum sit amet, finibus tempus eros. Vestibulum sed tincidunt arcu, vitae suscipit tortor. Donec fringilla diam eget est dictum lacinia.'
+	'PHS is a legally established DAO in the state of Wyoming. Individuals holding our DAO token will be eligible to vote on and create proposals. PHS will consist of 6 council members appointed by a community through a vote. All DAO token holders will be eligible to vote for or run for Council.'
 
 export const COUNCIL_TITLE = 'The Council'
-export const COUNCIL_DESCRIPTION =
-	'Nullam pharetra ac ante ut molestie. Vestibulum iaculis sagittis felis. Duis luctus metus quis urna imperdiet, eu fringilla lacus pulvinar.'
+export const COUNCIL_DESCRIPTION_1 =
+	'Council elections will be held every 6 months. All previously appointed Council members are eligible for re-election, and there is no limit to the number of times a member can be on the Council.'
+export const COUNCIL_DESCRIPTION_2 =
+	'Council members\' responsibilities will be to view each proposal, verify that it is feasible and beneficial to our community, and assist projects throughout their development. PHS goals consist of using our DAO Treasury to aid funding to future upcoming projects that will be launching into the NFT and Crypto space. These projects will be proposed to and voted by the community.'
 
 export const FAQ_TITLE = 'FAQs'
 export const FAQS = [

@@ -1,5 +1,6 @@
 import { createUseStyles } from 'react-jss'
 import { black, teal } from '../../config/colours'
+import { headingFontFamily } from '../../config/jss-vars'
 
 const styles = {
 	accordion: {
@@ -19,7 +20,7 @@ const styles = {
 			transform: 'translate(0, 50%)',
 			paddingBottom: '0em',
 		},
-		'&:checked ~ h3': {
+		'&:checked ~ h4': {
 			color: black,
 			'&::after': {
 				content: '"+"',
@@ -28,6 +29,9 @@ const styles = {
 	},
 	title: {
 		color: teal,
+		fontSize: '1.3em',
+		margin: '0',
+		fontFamily: headingFontFamily,
 		'&::after': {
 			content: '"-"',
 			paddingLeft: '0.5em',

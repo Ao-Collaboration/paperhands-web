@@ -1,11 +1,9 @@
-@font-face {
-	font-family: "Telegraphem";
-	src: url("./fonts/Telegraphem.otf");
-}
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Shadows+Into+Light&display=swap');
+
 
 body {
 	margin: 0;
-	font-family: '"Telegraphem", "Helvetica Neue", Helvetica, Arial, sans-serif';
+	font-family: 'Open Sans', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }

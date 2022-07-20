@@ -5,9 +5,8 @@ import { useNavigate } from 'react-router-dom'
 import {
 	ABOUT_DESCRIPTION,
 	ABOUT_TITLE,
-	ACTION_BUTTON_1,
-	ACTION_BUTTON_2,
-	COUNCIL_DESCRIPTION,
+	COUNCIL_DESCRIPTION_1,
+	COUNCIL_DESCRIPTION_2,
 	COUNCIL_TITLE,
 	FAQS,
 	FAQ_TITLE,
@@ -64,7 +63,8 @@ const Home: React.FC = () => {
 						<img className={classes.barcodeHand} src="/img/barcode.png" />
 						<div>
 							<h2>{COUNCIL_TITLE}</h2>
-							<p>{COUNCIL_DESCRIPTION}</p>
+							<p>{COUNCIL_DESCRIPTION_1}</p>
+							<p>{COUNCIL_DESCRIPTION_2}</p>
 						</div>
 					</div>
 				</section>
@@ -72,7 +72,7 @@ const Home: React.FC = () => {
 				<section id="faq" className={classes.faq}>
 					<img className={classes.pinkHand} src="/img/pink-hand.png" />
 					<img className={classes.grayHand} src="/img/grayish-hand.png" />
-					<div>
+					<div className={classes.paper}>
 						<h2 className={classes.centered}>{FAQ_TITLE}</h2>
 						{FAQS.map(faq => {
 							return (
