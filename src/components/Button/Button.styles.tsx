@@ -1,5 +1,5 @@
 import { createUseStyles } from 'react-jss'
-import { standardFontFamily, weightSemiBold } from '../../config/jss-vars'
+import { headingFontFamily, weightSemiBold } from '../../config/jss-vars'
 import {
 	white,
 	off_black,
@@ -11,13 +11,20 @@ import {
 	black,
 } from '../../config/colours'
 
-export type ClassNames = 'primary' | 'primaryInverted' | 'primaryBlack' | 'link' | 'success' | 'error' | 'info'
+export type ClassNames =
+	| 'primary'
+	| 'primaryInverted'
+	| 'primaryBlack'
+	| 'link'
+	| 'success'
+	| 'error'
+	| 'info'
 
 const styles = {
 	base: {
 		cursor: 'pointer',
-		fontFamily: standardFontFamily,
-		fontSize: '1rem',
+		fontFamily: headingFontFamily,
+		fontSize: '1.5rem',
 		lineHeight: '1rem',
 		textAlign: 'center',
 		display: 'inline-block',
@@ -26,8 +33,7 @@ const styles = {
 	button: {
 		composes: '$base',
 		border: 'none',
-		borderRadius: '0.35em',
-		padding: '0.75rem 4rem',
+		padding: '1.5rem 4rem',
 		letterSpacing: 0,
 		textTransform: 'uppercase',
 		fontWeight: weightSemiBold,
@@ -40,11 +46,11 @@ const styles = {
 	},
 	primary: {
 		composes: '$button',
-		background: purple,
-		color: off_white,
+		background: white,
+		color: teal,
 		'&:hover': {
-			color: white,
-		}
+			color: black,
+		},
 	},
 	primaryInverted: {
 		composes: '$button',
@@ -52,7 +58,7 @@ const styles = {
 		color: off_purple,
 		'&:hover': {
 			color: purple,
-		}
+		},
 	},
 	primaryBlack: {
 		composes: '$button',
@@ -60,7 +66,7 @@ const styles = {
 		color: off_white,
 		'&:hover': {
 			color: white,
-		}
+		},
 	},
 	link: {
 		composes: '$base',

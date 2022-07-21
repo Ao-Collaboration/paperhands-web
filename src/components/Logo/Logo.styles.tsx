@@ -1,6 +1,12 @@
 import { createUseStyles } from 'react-jss'
 
-export type ClassNames = 'default' | 'invert' | 'small' | 'large' | 'largeInverted'
+export type ClassNames =
+	| 'default'
+	| 'invert'
+	| 'small'
+	| 'large'
+	| 'largeInverted'
+	| 'defaultRect'
 
 const styles = {
 	defaultHeight: {
@@ -8,6 +14,9 @@ const styles = {
 	},
 	default: {
 		height: '3em',
+		width: '3em',
+	},
+	defaultRect: {
 		width: '3em',
 	},
 	invert: {
