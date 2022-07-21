@@ -44,6 +44,7 @@ const Home: React.FC = () => {
 					<img className={classes.barfHand} src="/img/barf-hand.png" />
 				</section>
 
+				<div aria-hidden className={classes.jaggyWhite}></div>
 				<section id="about" className={classes.about}>
 					<div className={classes.aside}>
 						<div>
@@ -54,6 +55,7 @@ const Home: React.FC = () => {
 					</div>
 				</section>
 
+				<div aria-hidden className={classes.jaggyPurple}></div>
 				<section id="council" className={classes.council}>
 					<div className={classes.aside}>
 						<img
@@ -69,9 +71,11 @@ const Home: React.FC = () => {
 					</div>
 				</section>
 
+				<div aria-hidden className={classes.jaggyOrange}></div>
 				<section id="faq" className={classes.faq}>
 					<img className={classes.pinkHand} src="/img/pink-hand.png" />
 					<img className={classes.grayHand} src="/img/grayish-hand.png" />
+					<div aria-hidden className={classes.paperTop}></div>
 					<div className={classes.paper}>
 						<h2 className={classes.centered}>{FAQ_TITLE}</h2>
 						{FAQS.map(faq => {
@@ -84,6 +88,7 @@ const Home: React.FC = () => {
 							)
 						})}
 					</div>
+					<div aria-hidden className={classes.paperBottom}></div>
 				</section>
 				<ActionPanel />
 			</div>
