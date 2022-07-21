@@ -23,10 +23,9 @@ const styles = {
 		'& h1': {
 			fontFamily: headingFontFamily,
 			textTransform: 'uppercase',
-			fontSize: '3em',
+			fontSize: '4em',
 			textShadow: `3px 3px 5px ${text_shadow}`,
 			margin: '0',
-			marginBottom: '-0.5em',
 		},
 	},
 	section: {

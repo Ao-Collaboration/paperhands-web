@@ -29,7 +29,7 @@ const styles = {
 	},
 	title: {
 		color: teal,
-		fontSize: '1.3em',
+		fontSize: '1.5em',
 		margin: '0',
 		fontFamily: headingFontFamily,
 		'&::after': {
