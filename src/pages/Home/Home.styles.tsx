@@ -36,6 +36,7 @@ const styles = {
 		alignItems: 'center',
 		justifyContent: 'center',
 		padding: '4em 0em',
+		position: 'relative',
 		'& h2, h3': {
 			fontFamily: headingFontFamily,
 			textTransform: 'uppercase',
@@ -43,12 +44,15 @@ const styles = {
 			textShadow: `3px 3px 5px ${text_shadow}`,
 			margin: '0',
 		},
+		'& div': {
+			maxWidth: '50rem',
+		},
 	},
 	hero: {
 		composes: '$section',
 		textAlign: 'center',
 		'& p': {
-			maxWidth: '50%',
+			maxWidth: '50rem',
 			fontSize: '1.3em',
 		},
 		'& sub': {
@@ -60,23 +64,11 @@ const styles = {
 		backgroundColor: white,
 		color: black,
 		marginBottom: '-8em',
-		'& div': {
-			maxWidth: '60em',
-		},
-	},
-	aside: {
-		padding: '1em',
-		display: 'flex',
-		alignItems: 'center',
 	},
 	council: {
 		composes: '$section',
 		backgroundColor: dark_purple,
 		zIndex: '100',
-		'& div': {
-			maxWidth: '60em',
-			padding: '0 2em',
-		},
 	},
 	faq: {
 		composes: '$section',
@@ -87,13 +79,13 @@ const styles = {
 		zIndex: '100',
 		backgroundColor: paper_white,
 		color: black,
-		maxWidth: '50em',
 		padding: '0 2em',
 	},
 	centered: {
 		textAlign: 'center',
 	},
 	hand: {
+		position: 'absolute',
 		filter: `drop-shadow(-10px 5px 2px ${image_shadow})`,
 	},
 	barfHand: {
@@ -106,22 +98,27 @@ const styles = {
 	vineHand: {
 		composes: '$hand',
 		width: '400px',
+		right: '-5em',
+		top: '-4em',
 	},
 	longTongueHand: {
 		composes: '$hand',
 		width: '300px',
+		top: '4em',
+		left: '-8em',
 		transform: 'rotate(-15deg)',
 	},
 	barcodeHand: {
 		composes: '$hand',
 		width: '300px',
+		top: '4em',
+		left: '8em',
 		marginLeft: '-6em',
 		marginTop: '-2em',
 		transform: 'rotate(15deg)',
 	},
 	pinkHand: {
 		composes: '$hand',
-		position: 'absolute',
 		width: '400px',
 		left: '0',
 		top: '5em',
@@ -130,7 +127,6 @@ const styles = {
 	},
 	grayHand: {
 		composes: '$hand',
-		position: 'absolute',
 		width: '400px',
 		right: '0',
 		bottom: '5em',
@@ -139,7 +135,7 @@ const styles = {
 	},
 	jaggyBase: {
 		height: '4em',
-		width: '100vw',
+		width: '100%',
 		'&:after': {
 			content: '""',
 			display: 'block',
@@ -173,10 +169,10 @@ const styles = {
 	paperTop: {
 		composes: '$jaggyBase',
 		backgroundColor: orange,
+		marginLeft: '-4em',
 		'&:after': {
 			backgroundColor: paper_white,
 			width: '100%',
-			maxWidth: '50em',
 			margin: 'auto',
 			padding: '0 2em',
 		},
@@ -184,10 +180,11 @@ const styles = {
 	paperBottom: {
 		composes: '$jaggyBase',
 		backgroundColor: orange,
+		marginLeft: '-4em',
+		zIndex: '500',
 		'&:after': {
 			backgroundColor: paper_white,
 			width: '100%',
-			maxWidth: '50em',
 			margin: 'auto',
 			padding: '0 2em',
 			clipPath:
