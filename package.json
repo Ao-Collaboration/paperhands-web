@@ -41,7 +41,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "yarn build && echo paperhandsdao.wtf > build/CNAME",
+    "predeploy": "yarn build && echo paperhanddao.wtf > build/CNAME",
     "deploy": "gh-pages -d build",
     "lint": "eslint src",
     "lint:fix": "eslint --fix src",
