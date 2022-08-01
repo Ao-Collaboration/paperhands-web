@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
 					</a>{' '}
 					| Developed by{' '}
 					<a href={MILKYTASTE_LINK} target="_blank">
-						MilkyTaste
+						Ao Collab
 					</a>
 				</span>
 			</div>

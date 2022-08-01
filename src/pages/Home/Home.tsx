@@ -46,28 +46,21 @@ const Home: React.FC = () => {
 
 				<div aria-hidden className={classes.jaggyWhite}></div>
 				<section id="about" className={classes.about}>
-					<div className={classes.aside}>
-						<div>
-							<h2>{ABOUT_TITLE}</h2>
-							<p>{ABOUT_DESCRIPTION}</p>
-						</div>
-						<img className={classes.vineHand} src="/img/hand-with-vine.png" />
+					<img className={classes.vineHand} src="/img/hand-with-vine.png" />
+					<div>
+						<h2>{ABOUT_TITLE}</h2>
+						<p>{ABOUT_DESCRIPTION}</p>
 					</div>
 				</section>
 
 				<div aria-hidden className={classes.jaggyPurple}></div>
 				<section id="council" className={classes.council}>
-					<div className={classes.aside}>
-						<img
-							className={classes.longTongueHand}
-							src="/img/long-tongue.png"
-						/>
-						<img className={classes.barcodeHand} src="/img/barcode.png" />
-						<div>
-							<h2>{COUNCIL_TITLE}</h2>
-							<p>{COUNCIL_DESCRIPTION_1}</p>
-							<p>{COUNCIL_DESCRIPTION_2}</p>
-						</div>
+					<img className={classes.longTongueHand} src="/img/long-tongue.png" />
+					<img className={classes.barcodeHand} src="/img/barcode.png" />
+					<div>
+						<h2>{COUNCIL_TITLE}</h2>
+						<p>{COUNCIL_DESCRIPTION_1}</p>
+						<p>{COUNCIL_DESCRIPTION_2}</p>
 					</div>
 				</section>
 
