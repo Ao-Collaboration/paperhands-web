@@ -10,6 +10,7 @@ const styles = {
 		flexDirection: 'column',
 		minHeight: '100vh',
 		backgroundColor: teal,
+		overflowX: 'hidden',
 	},
 	main: {
 		flex: 1,

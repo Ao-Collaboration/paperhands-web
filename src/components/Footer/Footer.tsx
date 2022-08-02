@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
 
 	return (
 		<footer className={classes.footer}>
-			<p className={classes.title}>Paper Hands Society</p>
+			<p className={classes.title}>Paper Hand Society</p>
 			<div className={classes.linkGroup}>
 				<a href={DISCORD_LINK} target="_blank">
 					<DiscordLogo />
@@ -23,13 +23,15 @@ const Footer: React.FC = () => {
 				<a href={TWITTER_LINK} target="_blank">
 					<TwitterLogo />
 				</a>
-				<a href={OPENSEA_LINK} target="_blank">
-					<OpenseaLogo />
-				</a>
+				{ OPENSEA_LINK.length > 0 && (
+					<a href={OPENSEA_LINK} target="_blank">
+						<OpenseaLogo />
+					</a>
+				)}
 			</div>
 			<div className={classes.copy}>
 				<span className={`${classes.left} ${classes.text}`}>
-					Ⓒ Paper Hands Society 2022
+					Ⓒ Paper Hand Society 2022
 				</span>
 				<img src="/img/grayish-hand.png" className={classes.hand} />
 				<span className={`${classes.right} ${classes.text}`}>

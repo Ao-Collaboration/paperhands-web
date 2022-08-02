@@ -1,4 +1,4 @@
-# Paper Hands Society DAO
+# Paper Hand Society DAO
 
 A simple base website for minting NFTs.
 
