@@ -27,9 +27,9 @@ export const ACTION_BUTTON_2 = 'Buy on Opensea'
 export const ACTION_LINK_2 = 'https://opensea.com/'
 
 // Landing Page
-export const HERO_TITLE = 'Paper Hands Society'
+export const HERO_TITLE = 'Paper Hand Society'
 export const HERO_DESCRIPTION =
-	'Paper Hands Society, or PHS is a collective group of individuals who reject the current NFT status quo. Our belief is simple "Community over everything"; with our motto, we have set forth to build a project that is bigger than us.'
+	'Paper Hand Society, or PHS is a collective group of individuals who reject the current NFT status quo. Our belief is simple "Community over everything"; with our motto, we have set forth to build a project that is bigger than us.'
 export const HERO_BUTTON_TEXT = 'Mint Now'
 export const HERO_SUBTEXT =
 	'PHS\'s inception was inspired by TruthLabs and the fantastic work they\'ve achieved.'
