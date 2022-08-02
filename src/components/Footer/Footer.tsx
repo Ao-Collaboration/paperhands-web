@@ -23,9 +23,11 @@ const Footer: React.FC = () => {
 				<a href={TWITTER_LINK} target="_blank">
 					<TwitterLogo />
 				</a>
-				<a href={OPENSEA_LINK} target="_blank">
-					<OpenseaLogo />
-				</a>
+				{ OPENSEA_LINK.length > 0 && (
+					<a href={OPENSEA_LINK} target="_blank">
+						<OpenseaLogo />
+					</a>
+				)}
 			</div>
 			<div className={classes.copy}>
 				<span className={`${classes.left} ${classes.text}`}>
