@@ -49,66 +49,66 @@ export const FAQS = [
 	{
 		title: 'What is a DAO?',
 		description:
-			'A Non Fungible Token is a quam luctus, congue laoreet mauris accumsan. Nullam euismod sit amet turpis ut blandit. Donec et maximus risus. Proin ligula nisi, aliquam convallis lorem non, blandit tincidunt erat.',
+			'A DAO is a Decentralized Autonomous Organization, or more simply put, a member-owned company.',
 	},
 	{
 		title: 'What is Paper Hand Society?',
 		description:
-			'A Non Fungible Token isn\'t a quam luctus, congue laoreet mauris accumsan. Nullam euismod sit amet turpis ut blandit. Donec et maximus risus. Proin ligula nisi, aliquam convallis lorem non, blandit tincidunt erat.',
+			'Paper Hand Society will be the NFTs made under our DAO, Paper Hand Labs DAO.',
 	},
 	{
 		title: 'What is Paper Hand Labs DAO?',
 		description:
-			'Aenean aliquet magna et semper commodo. In tempus est metus, at pretium justo pharetra nec. Vestibulum sit amet placerat ex. Mauris euismod ut leo eget posuere. Suspendisse maximus luctus nisl, quis faucibus augue tempor et. Donec at orci sed elit ultricies ornare. Nulla quis ornare velit. Nulla convallis risus et commodo condimentum. Nam tristique leo dictum quam feugiat dignissim. Cras at semper sapien. Proin sed urna lacus. Fusce mollis, odio eu maximus blandit, tellus ipsum vestibulum magna, non tincidunt dolor orci a tellus. Duis ultricies felis neque, vitae rutrum leo commodo et. Cras tincidunt quam tellus. Ut mollis consectetur quam non blandit. ',
+			'Paper Hand Labs DAO will be a legal DAO entity under Wyoming\'s DAO LLC.',
 	},
 	{
 		title: 'What will Paper Hand Labs DAO do?',
 		description:
-			'A Non Fungible Token is a quam luctus, congue laoreet mauris accumsan. Nullam euismod sit amet turpis ut blandit. Donec et maximus risus. Proin ligula nisi, aliquam convallis lorem non, blandit tincidunt erat.',
+			'Paper Hand Labs DAO will use funds from our DAO Treasury to fund additional projects, intertwining each community together through lore. All projects will be voted through the community for final approval before being funded.',
 	},
 	{
 		title: 'What does Paper Hand Labs DAO token grant?',
 		description:
-			'A Non Fungible Token isn\'t a quam luctus, congue laoreet mauris accumsan. Nullam euismod sit amet turpis ut blandit. Donec et maximus risus. Proin ligula nisi, aliquam convallis lorem non, blandit tincidunt erat.',
+			'Paper Hand Labs DAO will create a governance token and a separate NFT collection. Each token will grant the holder a claimable Paper Hand Society NFT, access into our DAO on Upstream, and the right to make proposals and vote.',
 	},
 	{
 		title: 'What are the benefits of holding a PHS NFT?',
 		description:
-			'Aenean aliquet magna et semper commodo. In tempus est metus, at pretium justo pharetra nec. Vestibulum sit amet placerat ex. Mauris euismod ut leo eget posuere. Suspendisse maximus luctus nisl, quis faucibus augue tempor et. Donec at orci sed elit ultricies ornare. Nulla quis ornare velit. Nulla convallis risus et commodo condimentum. Nam tristique leo dictum quam feugiat dignissim. Cras at semper sapien. Proin sed urna lacus. Fusce mollis, odio eu maximus blandit, tellus ipsum vestibulum magna, non tincidunt dolor orci a tellus. Duis ultricies felis neque, vitae rutrum leo commodo et. Cras tincidunt quam tellus. Ut mollis consectetur quam non blandit. ',
+			'Those that hold our PHS NFT will be raffled for airdrops and rewards of each project funded through our DAO, along with joining a vibrant community that is filled with builders and positivity.',
 	},
 	{
 		title: 'How can I receive a PHS NFT?',
 		description:
-			'A Non Fungible Token is a quam luctus, congue laoreet mauris accumsan. Nullam euismod sit amet turpis ut blandit. Donec et maximus risus. Proin ligula nisi, aliquam convallis lorem non, blandit tincidunt erat.',
+			'Each DAO token holder will be able to redeem 1 PHS NFTs. With a total supply of 2,500 DAO tokens, there will be 2,500 NFTs that will be redeemable.',
 	},
 	{
 		title: 'How do I receive a whitelist?',
 		description:
-			'A Non Fungible Token isn\'t a quam luctus, congue laoreet mauris accumsan. Nullam euismod sit amet turpis ut blandit. Donec et maximus risus. Proin ligula nisi, aliquam convallis lorem non, blandit tincidunt erat.',
+			'Whitelist can be achieved through various ways. One of the easiest ways to win will be to show your contribution to our DAO through voting, making suggestions, attending our update meetings and discussions, and engaging with us on Twitter.',
 	},
 	{
 		title: 'What will the mint price be?',
 		description:
-			'Aenean aliquet magna et semper commodo. In tempus est metus, at pretium justo pharetra nec. Vestibulum sit amet placerat ex. Mauris euismod ut leo eget posuere. Suspendisse maximus luctus nisl, quis faucibus augue tempor et. Donec at orci sed elit ultricies ornare. Nulla quis ornare velit. Nulla convallis risus et commodo condimentum. Nam tristique leo dictum quam feugiat dignissim. Cras at semper sapien. Proin sed urna lacus. Fusce mollis, odio eu maximus blandit, tellus ipsum vestibulum magna, non tincidunt dolor orci a tellus. Duis ultricies felis neque, vitae rutrum leo commodo et. Cras tincidunt quam tellus. Ut mollis consectetur quam non blandit. ',
+			'The mint price will be $60 USD. We cannot denominate that into Ethereum at this time as it would be subject to change.',
 	},
 	{
 		title: 'Wen Mint?',
 		description:
-			'Aenean aliquet magna et semper commodo. In tempus est metus, at pretium justo pharetra nec. Vestibulum sit amet placerat ex. Mauris euismod ut leo eget posuere. Suspendisse maximus luctus nisl, quis faucibus augue tempor et. Donec at orci sed elit ultricies ornare. Nulla quis ornare velit. Nulla convallis risus et commodo condimentum. Nam tristique leo dictum quam feugiat dignissim. Cras at semper sapien. Proin sed urna lacus. Fusce mollis, odio eu maximus blandit, tellus ipsum vestibulum magna, non tincidunt dolor orci a tellus. Duis ultricies felis neque, vitae rutrum leo commodo et. Cras tincidunt quam tellus. Ut mollis consectetur quam non blandit. ',
+			'TBD',
 	},
 	{
 		title: 'How will the DAO be structured',
 		description:
-			'Aenean aliquet magna et semper commodo. In tempus est metus, at pretium justo pharetra nec. Vestibulum sit amet placerat ex. Mauris euismod ut leo eget posuere. Suspendisse maximus luctus nisl, quis faucibus augue tempor et. Donec at orci sed elit ultricies ornare. Nulla quis ornare velit. Nulla convallis risus et commodo condimentum. Nam tristique leo dictum quam feugiat dignissim. Cras at semper sapien. Proin sed urna lacus. Fusce mollis, odio eu maximus blandit, tellus ipsum vestibulum magna, non tincidunt dolor orci a tellus. Duis ultricies felis neque, vitae rutrum leo commodo et. Cras tincidunt quam tellus. Ut mollis consectetur quam non blandit. ',
+			'The DAO will have a board of Council Members. Council Members will be the ones who first receive a proposal. If our members feel that the proposal is appropriate, viable, and beneficial for our community, they will approve the proposal. Once the proposal is approved, the entire DAO community will then vote for a \'Yes\' or a \'No\' on Upstream. The majority vote (50.1%) will then determine if the vote will be executed or not.',
 	},
 	{
 		title: 'Who are the council members?',
 		description:
-			'Aenean aliquet magna et semper commodo. In tempus est metus, at pretium justo pharetra nec. Vestibulum sit amet placerat ex. Mauris euismod ut leo eget posuere. Suspendisse maximus luctus nisl, quis faucibus augue tempor et. Donec at orci sed elit ultricies ornare. Nulla quis ornare velit. Nulla convallis risus et commodo condimentum. Nam tristique leo dictum quam feugiat dignissim. Cras at semper sapien. Proin sed urna lacus. Fusce mollis, odio eu maximus blandit, tellus ipsum vestibulum magna, non tincidunt dolor orci a tellus. Duis ultricies felis neque, vitae rutrum leo commodo et. Cras tincidunt quam tellus. Ut mollis consectetur quam non blandit. ',
+			'The Council Members will be voted in or out of Council every 6 months. Anyone can be a Council Member if they are a DAO token holder and receive enough votes from the other DAO token holders.',
 	},
 	{
 		title: 'What are the responsibilities of the council?',
 		description:
-			'Aenean aliquet magna et semper commodo. In tempus est metus, at pretium justo pharetra nec. Vestibulum sit amet placerat ex. Mauris euismod ut leo eget posuere. Suspendisse maximus luctus nisl, quis faucibus augue tempor et. Donec at orci sed elit ultricies ornare. Nulla quis ornare velit. Nulla convallis risus et commodo condimentum. Nam tristique leo dictum quam feugiat dignissim. Cras at semper sapien. Proin sed urna lacus. Fusce mollis, odio eu maximus blandit, tellus ipsum vestibulum magna, non tincidunt dolor orci a tellus. Duis ultricies felis neque, vitae rutrum leo commodo et. Cras tincidunt quam tellus. Ut mollis consectetur quam non blandit. ',
+			'Council members\' responsibilities will be to view each proposal, verify that it is feasible and beneficial to our community, and assist projects throughout their development. PHS goals consist of using our DAO Treasury to aid funding to future upcoming projects that will be launching into the NFT and Crypto space. These projects will be proposed to and voted by the community.',
 	},
 ]
