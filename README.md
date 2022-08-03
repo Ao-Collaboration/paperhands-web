@@ -25,6 +25,10 @@ The content is spread through various files.
 
 Update the content in `src/config/content.tsx`.
 
+### Terms and Conditions
+
+Update `src/config/terms.md` with the terms and conditions.
+This file supports [Markdown formatting](https://www.markdownguide.org/basic-syntax/).
 
 #### Header / Footer
 

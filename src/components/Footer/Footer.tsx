@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import {
 	DISCORD_LINK,
 	MILKYTASTE_LINK,
@@ -5,6 +6,7 @@ import {
 	OPENSEA_LINK,
 	TWITTER_LINK,
 } from '../../config/content'
+import { TermsRoute } from '../../pages/routes'
 import DiscordLogo from '../Logo/DiscordLogo'
 import OpenseaLogo from '../Logo/OpenseaLogo'
 import TwitterLogo from '../Logo/TwitterLogo'
@@ -31,7 +33,10 @@ const Footer: React.FC = () => {
 			</div>
 			<div className={classes.copy}>
 				<span className={`${classes.left} ${classes.text}`}>
-					Ⓒ Paper Hand Society 2022
+					&copy; Paper Hand Society 2022 |{' '}
+					<Link to={TermsRoute.path}>
+						Terms &amp; Conditions
+					</Link>
 				</span>
 				<img src="/img/grayish-hand.png" className={classes.hand} />
 				<span className={`${classes.right} ${classes.text}`}>
