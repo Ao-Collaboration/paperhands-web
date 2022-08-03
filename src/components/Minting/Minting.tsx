@@ -16,12 +16,12 @@ import {
 	TX_PENDING,
 	WEBSITE_OUTDATED,
 } from '../../config/content'
-import Input from '../Input/Input'
 import { BigNumber, ContractTransaction } from 'ethers'
 import Spinner from '../Spinner/Spinner'
 import { ALLOWLIST } from '../../config/allowlist'
 import { generateTree, getLeaf, getProof } from '../../utils/merkle'
 import { toast } from 'react-toastify'
+import Select from '../Select/Select'
 
 const Minting: FC = () => {
 	const { web3Provider } = useContext(Web3Context)
@@ -62,7 +62,7 @@ const Minting: FC = () => {
 				}
 				if (checkAllowance) {
 					// Check how many tokens are claimable
-					const _allowance = await nftContract.allowance(addr)
+					const _allowance = (await nftContract.allowance(addr)).toNumber()
 					setAllowance(_allowance)
 					if (_allowance === 0) {
 						// All claimed
@@ -76,7 +76,7 @@ const Minting: FC = () => {
 	}, [web3Provider, nftContract])
 
 	const doMint = async () => {
-		const qty = (document.getElementById('qty') as HTMLInputElement)?.value
+		const qty = (document.getElementById('qty') as HTMLSelectElement)?.selectedIndex + 1
 		if (!web3Provider || !nftContract || !qty) {
 			return
 		}
@@ -125,15 +125,16 @@ const Minting: FC = () => {
 				<>
 					<h1>{MINT_PAGE_TITLE}</h1>
 					<div className={classes.mint}>
-						<Input
+						<Select
 							id="qty"
-							type="number"
 							defaultValue={Math.ceil(allowance / 2)}
-							min={1}
-							max={allowance}
 							required
 							disabled={allowance === 0}
-						/>
+						>
+							{Array.from(Array(allowance).keys()).map(i => (
+								<option value={i + 1}>{i + 1}</option>
+							))}
+						</Select>
 						<Button onClick={doMint} disabled={txPending || allowance === 0}>
 							{txPending ? TX_PENDING : MINT_BTN_TEXT}
 						</Button>

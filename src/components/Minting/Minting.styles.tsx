@@ -23,10 +23,9 @@ const styles = {
 		},
 	},
 	mint: {
-		display: 'flex',
-		flexDirection: 'row',
+		display: 'grid',
+		gridTemplateColumns: '1fr 1fr',
 		gap: '2em',
-		justifyContent: 'center',
 	},
 }
 
