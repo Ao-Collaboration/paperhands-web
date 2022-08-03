@@ -31,7 +31,7 @@ Update the content in `src/config/content.tsx`.
 The header content is located in `src/components/Header/`
 The footer content is located in `src/components/Footer/`
 
-### Web3
+### Web3 - DEV NEEDED
 
 Update `src/abi/tokenABI.json` to match the contract ABI.
 
@@ -43,6 +43,9 @@ Currently:
 ```js
 	const tx = await nftContract.mint(await signer.getAddress(), 1)
 ```
+
+Update the allowlist addresses in `src/config/allowlist.tsx`.
+Each address is on a new line in the format `'0xaddress',`.
 
 ### Fonts
 
