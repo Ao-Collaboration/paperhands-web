@@ -1,5 +1,5 @@
 import { createUseStyles } from 'react-jss'
-import { white } from '../../config/colours'
+import { teal, white } from '../../config/colours'
 import { weightSemiBold } from '../../config/jss-vars'
 
 const styles = {
@@ -10,6 +10,7 @@ const styles = {
 		alignItems: 'center',
 		gap: '1em',
 		padding: '1em',
+		background: teal,
 	},
 	rightContent: {
 		marginLeft: 'auto',

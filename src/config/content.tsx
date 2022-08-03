@@ -112,3 +112,11 @@ export const FAQS = [
 			'Aenean aliquet magna et semper commodo. In tempus est metus, at pretium justo pharetra nec. Vestibulum sit amet placerat ex. Mauris euismod ut leo eget posuere. Suspendisse maximus luctus nisl, quis faucibus augue tempor et. Donec at orci sed elit ultricies ornare. Nulla quis ornare velit. Nulla convallis risus et commodo condimentum. Nam tristique leo dictum quam feugiat dignissim. Cras at semper sapien. Proin sed urna lacus. Fusce mollis, odio eu maximus blandit, tellus ipsum vestibulum magna, non tincidunt dolor orci a tellus. Duis ultricies felis neque, vitae rutrum leo commodo et. Cras tincidunt quam tellus. Ut mollis consectetur quam non blandit. ',
 	},
 ]
+
+// Mint Page
+export const MINT_HERO_TITLE = 'Paper Hands Society'
+export const MINT_HERO_DESCRIPTION =
+	'Paper Hands Society, or PHS is a collective group of individuals who reject the current NFT status quo. Our belief is simple "Community over everything"; with our motto, we have set forth to build a project that is bigger than us.'
+export const MINT_HERO_BUTTON_TEXT = 'Mint Now'
+export const MINT_HERO_SUBTEXT =
+	'PHS\'s inception was inspired by TruthLabs and the fantastic work they\'ve achieved.'

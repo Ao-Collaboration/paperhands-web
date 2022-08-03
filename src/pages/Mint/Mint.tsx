@@ -1,4 +1,5 @@
 import { useContext } from 'react'
+import Header from '../../components/Header/Header'
 import Minting from '../../components/Minting/Minting'
 import PageWrapper from '../../components/PageWrapper/PageWrapper'
 import { Web3Context } from '../../context/Web3/Web3Context'
@@ -11,7 +12,12 @@ const Profile: React.FC = () => {
 
 	if (!web3Provider) {
 		// Require wallet connection
-		return <ConnectWallet />
+		return (
+			<>
+				<Header />
+				<ConnectWallet />
+			</>
+		)
 	}
 
 	return (
