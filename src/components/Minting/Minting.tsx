@@ -76,6 +76,7 @@ const Minting: FC = () => {
 	}, [web3Provider, nftContract])
 
 	const doMint = async () => {
+		setTxPending(true)
 		const qty = (document.getElementById('qty') as HTMLSelectElement)?.selectedIndex + 1
 		if (!web3Provider || !nftContract || !qty) {
 			return
@@ -100,7 +101,6 @@ const Minting: FC = () => {
 			}
 			setTxPending(true)
 			await tx.wait()
-			setTxPending(false)
 			toast.success(MINT_SUCCESS)
 		} catch (err: any) { // eslint-disable-line @typescript-eslint/no-explicit-any
 			if (err?.error?.code === -32000) {
@@ -109,6 +109,8 @@ const Minting: FC = () => {
 				toast.error(MINT_FAIL_GENERIC)
 			}
 			console.error(err.error)
+		} finally {
+			setTxPending(false)
 		}
 	}
 
