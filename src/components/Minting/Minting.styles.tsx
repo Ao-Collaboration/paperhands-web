@@ -17,6 +17,10 @@ const styles = {
 			textShadow: `3px 3px 5px ${text_shadow}`,
 			margin: '0',
 		},
+		'& p': {
+			maxWidth: '50rem',
+			fontSize: '1.3em',
+		},
 	},
 	mint: {
 		display: 'flex',

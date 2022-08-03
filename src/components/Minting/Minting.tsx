@@ -8,6 +8,8 @@ import {
 	MINT_BTN_TEXT,
 	MINT_FAIL_GENERIC,
 	MINT_FAIL_POOR,
+	MINT_NOSALE_SUBTEXT,
+	MINT_NOSALE_TITLE,
 	MINT_NOT_ALLOWLISTED,
 	MINT_PAGE_TITLE,
 	MINT_SUCCESS,
@@ -112,28 +114,30 @@ const Minting: FC = () => {
 
 	return (
 		<div className={classes.page}>
-			<h1>{MINT_PAGE_TITLE}</h1>
 			{loading ? (
 				<Spinner />
 			) : (contractState === 0 ? (
 				<>
-					<p>Sale not yet live!</p>
-					<p>Come back soon!</p>
+					<h1>{MINT_NOSALE_TITLE}</h1>
+					<p>{MINT_NOSALE_SUBTEXT}</p>
 				</>
 			) : (
-				<div className={classes.mint}>
-					<Input
-						id="qty"
-						type="number"
-						defaultValue={allowance}
-						min={1}
-						max={allowance}
-						required
-					/>
-					<Button onClick={doMint} disabled={txPending}>
-						{txPending ? TX_PENDING : MINT_BTN_TEXT}
-					</Button>
-				</div>
+				<>
+					<h1>{MINT_PAGE_TITLE}</h1>
+					<div className={classes.mint}>
+						<Input
+							id="qty"
+							type="number"
+							defaultValue={allowance}
+							min={1}
+							max={allowance}
+							required
+						/>
+						<Button onClick={doMint} disabled={txPending}>
+							{txPending ? TX_PENDING : MINT_BTN_TEXT}
+						</Button>
+					</div>
+				</>
 			))}
 		</div>
 	)
