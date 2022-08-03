@@ -5,7 +5,7 @@ import { Web3Context } from '../../context/Web3/Web3Context'
 import ConnectWallet from '../ConnectWallet/ConnectWallet'
 import useStyles from './Mint.styles'
 
-const Profile: React.FC = () => {
+const Mint: React.FC = () => {
 	const classes = useStyles()
 	const { web3Provider } = useContext(Web3Context)
 
@@ -23,4 +23,4 @@ const Profile: React.FC = () => {
 	)
 }
 
-export default Profile
+export default Mint
