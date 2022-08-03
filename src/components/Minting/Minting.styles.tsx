@@ -27,6 +27,11 @@ const styles = {
 		gridTemplateColumns: '1fr 1fr',
 		gap: '2em',
 	},
+	remaining: {
+		marginBottom: '1em',
+		maxWidth: '50rem',
+		fontSize: '1.3em',
+	},
 }
 
 export default createUseStyles(styles)

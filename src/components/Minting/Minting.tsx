@@ -15,6 +15,7 @@ import {
 	MINT_SOLDOUT_SUBTEXT,
 	MINT_SOLDOUT_TITLE,
 	MINT_SUCCESS,
+	MINT_SUPPLY_TEXT,
 	OPENSEA_LINK,
 	TX_PENDING,
 	WEBSITE_OUTDATED,
@@ -149,6 +150,9 @@ const Minting: FC = () => {
 			) : (
 				<>
 					<h1>{MINT_PAGE_TITLE}</h1>
+					<div className={classes.remaining}>
+						{MINT_SUPPLY_TEXT}: {totalSupply === null ? '...' : totalSupply} / {MAX_SUPPLY}
+					</div>
 					<div className={classes.mint}>
 						<Select
 							id="qty"
