@@ -128,7 +128,7 @@ const Minting: FC = () => {
 						<Input
 							id="qty"
 							type="number"
-							defaultValue={allowance}
+							defaultValue={Math.ceil(allowance / 2)}
 							min={1}
 							max={allowance}
 							required
