@@ -53,11 +53,11 @@ const Minting: FC = () => {
 						// Presale, not on list
 						checkAllowance = false
 						setAllowance(0)
-						toast.warn(MINT_NOT_ALLOWLISTED)
+						toast.warn(MINT_NOT_ALLOWLISTED, { autoClose: false })
 					} else if (generateTree(ALLOWLIST).root !== await nftContract.merkleRoot()) {
 						checkAllowance = false
 						setAllowance(0)
-						toast.warn(WEBSITE_OUTDATED)
+						toast.warn(WEBSITE_OUTDATED, { autoClose: false })
 					}
 				}
 				if (checkAllowance) {
@@ -66,7 +66,7 @@ const Minting: FC = () => {
 					setAllowance(_allowance)
 					if (_allowance === 0) {
 						// All claimed
-						toast.warn(MINT_ALLOWANCE_EXCEEDED)
+						toast.warn(MINT_ALLOWANCE_EXCEEDED, { autoClose: false })
 					}
 				}
 			}
@@ -132,8 +132,9 @@ const Minting: FC = () => {
 							min={1}
 							max={allowance}
 							required
+							disabled={allowance === 0}
 						/>
-						<Button onClick={doMint} disabled={txPending}>
+						<Button onClick={doMint} disabled={txPending || allowance === 0}>
 							{txPending ? TX_PENDING : MINT_BTN_TEXT}
 						</Button>
 					</div>
