@@ -36,6 +36,11 @@ The footer content is located in `src/components/Footer/`
 Update `src/abi/tokenABI.json` to match the contract ABI.
 
 Update the contract addresses in `src/config/chain.tsx`.
+```js
+export const getContractId = (chainId: number): string => chainId === 4 ? '0xXXX' : 'PUT CONTRACT ADDRESS HERE'`
+```
+
+Update the max supply in `src/config/chain.tsx`.
 
 Update the mint integration in `src/components/Minting/Minting.tsx`.
 Currently:

@@ -12,7 +12,10 @@ import {
 	MINT_NOSALE_TITLE,
 	MINT_NOT_ALLOWLISTED,
 	MINT_PAGE_TITLE,
+	MINT_SOLDOUT_SUBTEXT,
+	MINT_SOLDOUT_TITLE,
 	MINT_SUCCESS,
+	OPENSEA_LINK,
 	TX_PENDING,
 	WEBSITE_OUTDATED,
 } from '../../config/content'
@@ -22,12 +25,15 @@ import { ALLOWLIST } from '../../config/allowlist'
 import { generateTree, getLeaf, getProof } from '../../utils/merkle'
 import { toast } from 'react-toastify'
 import Select from '../Select/Select'
+import { MAX_SUPPLY } from '../../config/chain'
+import OpenseaLogo from '../Logo/OpenseaLogo'
 
 const Minting: FC = () => {
 	const { web3Provider } = useContext(Web3Context)
 	const { nftContract } = useContext(ContractContext)
 	const classes = useStyles()
 	const [loading, setLoading] = useState(true)
+	const [totalSupply, setTotalSupply] = useState<number | null>(null)
 	const [contractState, setContractState] = useState(0)
 	const [allowance, setAllowance] = useState(0)
 	const [txPending, setTxPending] = useState(false)
@@ -38,35 +44,43 @@ const Minting: FC = () => {
 				return
 			}
 			const signer = web3Provider.getSigner()
-			const _contractState = await nftContract.contractState()
-			setContractState(_contractState)
-			if (_contractState === 0) {
-				// Sale off
-				setAllowance(0)
-			} else {
-				const addr = await signer.getAddress()
-				const listed = ALLOWLIST.includes(addr.toLowerCase())
-				let checkAllowance = true
-				if (_contractState === 1) {
-					// Presale
-					if (!listed) {
-						// Presale, not on list
-						checkAllowance = false
-						setAllowance(0)
-						toast.warn(MINT_NOT_ALLOWLISTED, { autoClose: false })
-					} else if (generateTree(ALLOWLIST).root !== await nftContract.merkleRoot()) {
-						checkAllowance = false
-						setAllowance(0)
-						toast.warn(WEBSITE_OUTDATED, { autoClose: false })
+
+			const _totalSupply = (await nftContract.totalSupply()).toNumber()
+			setTotalSupply(_totalSupply)
+			if (_totalSupply < MAX_SUPPLY) {
+				// Not sold out
+				const _contractState = await nftContract.contractState()
+				setContractState(_contractState)
+				if (_contractState === 0) {
+					// Sale off
+					setAllowance(0)
+				} else {
+					const addr = await signer.getAddress()
+					const listed = ALLOWLIST.includes(addr.toLowerCase())
+					let checkAllowance = true
+					if (_contractState === 1) {
+						// Presale
+						if (!listed) {
+							// Presale, not on list
+							checkAllowance = false
+							setAllowance(0)
+							toast.warn(MINT_NOT_ALLOWLISTED, { autoClose: false })
+						} else if (
+							generateTree(ALLOWLIST).root !== (await nftContract.merkleRoot())
+						) {
+							checkAllowance = false
+							setAllowance(0)
+							toast.warn(WEBSITE_OUTDATED, { autoClose: false })
+						}
 					}
-				}
-				if (checkAllowance) {
-					// Check how many tokens are claimable
-					const _allowance = (await nftContract.allowance(addr)).toNumber()
-					setAllowance(_allowance)
-					if (_allowance === 0) {
-						// All claimed
-						toast.warn(MINT_ALLOWANCE_EXCEEDED, { autoClose: false })
+					if (checkAllowance) {
+						// Check how many tokens are claimable
+						const _allowance = (await nftContract.allowance(addr)).toNumber()
+						setAllowance(_allowance)
+						if (_allowance === 0) {
+							// All claimed
+							toast.warn(MINT_ALLOWANCE_EXCEEDED, { autoClose: false })
+						}
 					}
 				}
 			}
@@ -77,7 +91,8 @@ const Minting: FC = () => {
 
 	const doMint = async () => {
 		setTxPending(true)
-		const qty = (document.getElementById('qty') as HTMLSelectElement)?.selectedIndex + 1
+		const qty =
+			(document.getElementById('qty') as HTMLSelectElement)?.selectedIndex + 1
 		if (!web3Provider || !nftContract || !qty) {
 			return
 		}
@@ -118,7 +133,15 @@ const Minting: FC = () => {
 		<div className={classes.page}>
 			{loading ? (
 				<Spinner />
-			) : (contractState === 0 ? (
+			) : totalSupply || 0 >= MAX_SUPPLY ? (
+				<>
+					<h1>{MINT_SOLDOUT_TITLE}</h1>
+					<p>{MINT_SOLDOUT_SUBTEXT}</p>
+					<a href={OPENSEA_LINK} target="_blank">
+						<OpenseaLogo />
+					</a>
+				</>
+			) : contractState === 0 ? (
 				<>
 					<h1>{MINT_NOSALE_TITLE}</h1>
 					<p>{MINT_NOSALE_SUBTEXT}</p>
@@ -142,7 +165,7 @@ const Minting: FC = () => {
 						</Button>
 					</div>
 				</>
-			))}
+			)}
 		</div>
 	)
 }
