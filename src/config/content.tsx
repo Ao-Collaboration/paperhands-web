@@ -7,7 +7,7 @@ export const MINT_SOLDOUT_TITLE = 'Sold out!'
 export const MINT_SOLDOUT_SUBTEXT = 'Find us on Opensea!'
 
 export const MINT_BTN_TEXT = 'Mint'
-export const MINT_SUPPLY_TEXT = 'Supply'
+export const MINT_SUPPLY_TEXT = 'Sold'
 export const MINT_SUCCESS = 'Congrats on minting your NFT!'
 export const MINT_FAIL_POOR = 'You don\'t have enought ETH!'
 export const MINT_FAIL_GENERIC = 'Unable to mint!'
