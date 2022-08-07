@@ -13,3 +13,8 @@ export const MintRoute: Route = {
 	name: 'Mint',
 	path: '/mint'
 }
+
+export const TermsRoute: Route = {
+	name: 'Terms and Conditions',
+	path: '/terms'
+}
