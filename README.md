@@ -31,11 +31,16 @@ Update the content in `src/config/content.tsx`.
 The header content is located in `src/components/Header/`
 The footer content is located in `src/components/Footer/`
 
-### Web3
+### Web3 - DEV NEEDED
 
 Update `src/abi/tokenABI.json` to match the contract ABI.
 
 Update the contract addresses in `src/config/chain.tsx`.
+```js
+export const getContractId = (chainId: number): string => chainId === 4 ? '0xXXX' : 'PUT CONTRACT ADDRESS HERE'`
+```
+
+Update the max supply in `src/config/chain.tsx`.
 
 Update the mint integration in `src/components/Minting/Minting.tsx`.
 Currently:
@@ -43,6 +48,9 @@ Currently:
 ```js
 	const tx = await nftContract.mint(await signer.getAddress(), 1)
 ```
+
+Update the allowlist addresses in `src/config/allowlist.tsx`.
+Each address is on a new line in the format `'0xaddress',`.
 
 ### Fonts
 
