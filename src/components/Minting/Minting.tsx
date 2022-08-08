@@ -41,9 +41,15 @@ const Minting: FC = () => {
 
 	useEffect(() => {
 		const checkStatus = async () => {
-			if (!web3Provider || !nftContract) {
+			setLoading(true)
+			if (!web3Provider) {
 				return
 			}
+			if (!nftContract) {
+				setLoading(false)
+				return
+			}
+
 			const signer = web3Provider.getSigner()
 
 			const _totalSupply = (await nftContract.totalSupply()).toNumber()
