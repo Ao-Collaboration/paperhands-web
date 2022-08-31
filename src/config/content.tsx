@@ -38,8 +38,7 @@ export const HERO_TITLE = 'Paper Hand Society'
 export const HERO_DESCRIPTION =
 	'Paper Hand Society, or PHS is a collective group of individuals who reject the current NFT status quo. Our belief is simple "Community over everything"; with our motto, we have set forth to build a project that is bigger than us.'
 export const HERO_BUTTON_TEXT = 'Mint Now'
-export const HERO_SUBTEXT =
-	'PHS\'s inception was inspired by TruthLabs and the fantastic work they\'ve achieved.'
+export const HERO_SUBTEXT = ''
 
 export const ABOUT_TITLE = 'About PHS'
 export const ABOUT_DESCRIPTION =
